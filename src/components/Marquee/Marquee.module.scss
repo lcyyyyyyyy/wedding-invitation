@@ -1,0 +1,16 @@
+.wrapper {
+  width: 100%;
+  margin:  120px auto;
+  padding: 1em 0;
+  display: flex;
+  overflow: hidden;
+  background: #989087;
+  align-items: center;
+  white-space: nowrap;
+
+  span {
+    color: #fff;
+    font-size: 4rem;
+    margin-left: 40px;
+  }
+}
