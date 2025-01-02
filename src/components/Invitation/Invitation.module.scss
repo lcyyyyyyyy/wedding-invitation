@@ -1,5 +1,12 @@
 .wrapper {
   display: flex;
+  padding: 0 15px;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
+
+  @media (min-width: 1060px) {
+    padding: 0;
+    flex-direction: row;
+  }
 }

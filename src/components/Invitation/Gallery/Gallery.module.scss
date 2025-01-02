@@ -1,15 +1,29 @@
 .wrapper {
-  width: 50%;
-  height: calc(50vh + 25px + 30px);
+  width: 100%;
+  height: 80vh;
   overflow: hidden;
   position: relative;
 
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
 
-  @media (min-width: 790px) {
+  @media (min-width: 1060px) {
+    width: 50%;
     height: 100vh;
+    justify-content: flex-end;
+  }
+
+  swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  swiper-slide {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
   }
 
   :global {
@@ -26,38 +40,27 @@
       height: 100%;
       overflow: hidden;
       position: relative;
-      background-position: center;
       background-size: cover;
+      background-position: center;
     }
   }
 }
 
 .gallery {
-  width: calc(100% - 30px);
-  height: calc(50vh - 30px);
+  width: 100%;
+  height: 70vh;
   overflow: hidden;
   position: relative;
   clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
 
-  @media (min-width: 790px) {
+  @media (min-width: 1060px) {
     height: 90vh;
-  }
-
-  @media (min-width: 1260px) {
-    width: calc(100% - 20vw);
-  }
-
-  @media (min-width: 1460px) {
-    width: calc(100% - 30vw);
   }
 }
 
 .item {
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  position: absolute;
   overflow: hidden;
 }
 

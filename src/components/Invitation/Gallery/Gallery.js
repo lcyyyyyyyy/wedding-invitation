@@ -9,16 +9,18 @@ import gsap from 'gsap'
 import Image from 'next/image'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, EffectFade } from 'swiper/modules'
+import { register } from 'swiper/element/bundle'
 
 import 'swiper/scss'
 import 'swiper/scss/effect-fade'
 import styles from './Gallery.module.scss'
 
+register()
 gsap.registerPlugin(ScrollTrigger)
 
 const Gallery = () => {
+  const isProd = process.env.NODE_ENV === 'production'
+  const rootUrl = process.env.NEXT_PUBLIC_ROOT_URL
   const container = useRef(null)
   const swiperRef = useRef(null)
   const galleryRef = useRef(null)
@@ -30,27 +32,9 @@ const Gallery = () => {
     '/2X0A4275.jpg',
     '/2X0A4267.jpg',
     '/2X0A4286.jpg',
-    '/2X0A4291.jpg'
+    '/2X0A4291.jpg',
+    '/2X0A4294.jpg'
   ]
-
-  const params = {
-    loop: true,
-    speed: 800,
-    effect: 'fade',
-    modules: [Autoplay, EffectFade],
-    slidesPerView: 1,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: true
-    },
-    fadeEffect: {
-      crossFade: true
-    }
-  }
-
-  const onInit = () => {
-    setIsSwiperInit(true)
-  }
 
   useEffect(() => {
     setIsLoaded(true)
@@ -59,6 +43,27 @@ const Gallery = () => {
   useEffect(() => {
     if (isLoaded) {
       const swiperEl = swiperRef?.current
+      const params = {
+        speed: 800,
+        effect: 'fade',
+        slidesPerView: 1,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: true
+        },
+        fadeEffect: {
+          crossFade: true
+        },
+        on: {
+          init: () => {
+            setIsSwiperInit(true)
+          }
+        }
+      }
+
+      Object.assign(swiperEl, params)
+      swiperEl.initialize()
+
       setWindowHeight(swiperEl?.clientHeight)
     }
   }, [isLoaded])
@@ -76,9 +81,6 @@ const Gallery = () => {
             scrollTrigger: {
               start: 'moddle bottom',
               trigger: `.${styles.gallery}`
-            },
-            onComplete: () => {
-              swiperRef?.current?.swiper?.autoplay?.start()
             }
           })
 
@@ -111,18 +113,20 @@ const Gallery = () => {
             borderRadius: `${windowHeight * 0.5}px ${windowHeight * 0.5}px 0 0`
           }}
         >
-          <Swiper
+          <swiper-container
             id='slider'
             ref={swiperRef}
-            onInit={onInit}
-            {...params}
+            init='false'
+            // init={false}
           >
             {slides?.map(slide => {
+              const image = isProd ? `${rootUrl}${slide}` : slide
+
               return (
-                <SwiperSlide key={slide}>
+                <swiper-slide key={slide}>
                   <div className={styles.item}>
                     <figure
-                      style={{ backgroundImage: `url(${slide})` }}
+                      style={{ backgroundImage: `url(${image})` }}
                       className={styles.backgroundImage}
                     >
                       <Image
@@ -133,10 +137,10 @@ const Gallery = () => {
                       />
                     </figure>
                   </div>
-                </SwiperSlide>
+                </swiper-slide>
               )
             })}
-          </Swiper>
+          </swiper-container>
         </div>
       }
     </div>

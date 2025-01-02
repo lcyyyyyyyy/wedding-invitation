@@ -1,40 +1,97 @@
 .wrapper {
-  width: 50%;
+  width: 100%;
   text-align: center;
+
+  h2,
+  h3 {
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
 
   h2 {
     color: #ddbd99;
-    font-size: 6rem;
+    font-size: 4rem;
   }
 
   h3 {
-    font-size: 4rem;
+    font-size: 3rem;
     margin-bottom: 40px;
   }
 
   h4 {
     color: #ddbd99;
     position: relative;
-    font-size: 3.4rem;
+    font-size: 2.8rem;
     margin-bottom: 40px;
-
-    svg {
-      position: absolute;
-    }
   }
 
   h5 {
     color: #707070;
-    font-size: 3rem;
+    font-size: 2.2rem;
     margin-bottom: 20px;
   }
 
   p {
-    font-size: 2.6rem;
+    font-size: 2rem;
     line-height: 1.5;
 
     span {
-      font-size: 2rem;
+      font-size: 1.8rem;
+    }
+  }
+
+  @media (min-width: 560px) {
+    h2 {
+      font-size: 6rem;
+    }
+
+    h3 {
+      font-size: 4rem;
+    }
+
+    h4 {
+      font-size: 3.4rem;
+    }
+
+    h5 {
+      font-size: 3rem;
+    }
+
+    p {
+      font-size: 2.6rem;
+
+      span {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  @media (min-width: 1060px) {
+    width: 50%;
+  }
+}
+
+.icon {
+  top: 50%;
+  opacity: 0;
+  position: absolute;
+
+  &.male {
+    right: -40px;
+    transform: translate(-30px, -50%);
+  }
+
+  &.female {
+    left: -40px;
+    transform: translate(30px, -50%);
+  }
+
+  @media (min-width: 560px) {
+    &.male {
+      right: -70px;
+    }
+
+    &.female {
+      left: -70px;
     }
   }
 }
@@ -50,6 +107,8 @@
 .block {
   flex: 1;
   display: flex;
+  opacity: 0;
+  transform: translateY(30px);
   align-items: center;
   flex-direction: column;
   justify-content: center;
@@ -62,4 +121,8 @@
   position: absolute;
   font-size: 4rem;
   transform: translate(-50%, -50%);
+}
+
+.info {
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
 }

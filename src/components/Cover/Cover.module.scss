@@ -41,13 +41,13 @@
   z-index: 1;
 
   &.left {
-    left: 9vw;
-    width: 41vw;
+    left: 0;
+    width: 50vw;
     justify-content: flex-end;
 
-    @media (max-width: 900px) {
-      left: 0;
-      width: 50vw;
+    @media (min-width: 900px) {
+      left: 9vw;
+      width: 41vw;
     }
   }
 
@@ -61,24 +61,27 @@
     color: #000;
     width: max-content;
     height: 100%;
-    padding: 4em;
+    padding: 50px;
     display: flex;
     align-items: center;
+
+    @media (min-width: 560px) {
+      padding: 80px;
+    }
   }
 }
 
 .content {
   top: 0;
-  left: 10vw;
-  width: 90vw;
+  left: 0;
+  width: 100vw;
   height: 100vh;
-  // z-index: -2;
   overflow: hidden;
   position: absolute;
 
-  @media (max-width: 900px) {
-    left: 0;
-    width: 100vw;
+  @media (min-width: 900px) {
+    left: 10vw;
+    width: 90vw;
   }
 }
 
