@@ -11,6 +11,7 @@ import { useGSAP } from '@gsap/react'
 
 import styles from './page.module.scss'
 
+import Maps from '../components/Maps/Maps'
 import Logo from '../components/Logo/Logo'
 import Cover from '../components/Cover/Cover'
 import Marquee from '../components/Marquee/Marquee'
@@ -51,11 +52,13 @@ const Home = () => {
       style={{ overflow: isLoaded ? 'unset' : 'hidden' }}
       className={styles.container}
     >
-      <Logo />
-      <Cover />
-      <Marquee />
-      <Invitation />
-      <div style={{ height: '2000px' }}></div>
+      <div>
+        <Logo />
+        <Cover />
+        <Marquee />
+        <Invitation />
+      </div>
+      <Maps />
     </div>
   )
 }

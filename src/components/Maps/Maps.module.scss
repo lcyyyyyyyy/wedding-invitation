@@ -1,0 +1,13 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+
+  iframe {
+    width: 100vw;
+    height: 200px;
+    border: 0;
+  }
+}
