@@ -8,7 +8,10 @@ import { useGSAP } from '@gsap/react'
 import styles from './Cover.module.scss'
 
 const Cover = () => {
+  const isProd = process.env.NODE_ENV === 'production'
+  const rootUrl = process.env.NEXT_PUBLIC_ROOT_URL
   const container = useRef(null)
+  const coverImage = '/2X0A4321.jpg'
 
   useGSAP(
     () => {
@@ -65,7 +68,7 @@ const Cover = () => {
           <Image
             id='cover'
             alt='cover image'
-            src='/2X0A4321.jpg'
+            src={isProd ? `${rootUrl}${coverImage}` : coverImage}
             fill={true}
             style={{ objectFit: 'cover' }}
             priority={true}
