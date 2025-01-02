@@ -8,7 +8,10 @@ const ChenYuluoyan = localFont({ src: '../../public/fonts/ChenYuluoyan-Thin.ttf'
 export const metadata = {
   icons: [{ rel: 'icon', url: Favicon.src }],
   title: 'FU & LIN Wedding Invitation',
-  description: 'Joyfully invite you to our wedding.'
+  description: 'Joyfully invite you to our wedding.',
+  openGraph: {
+    images: ['../../public/2X0A4321.jpg']
+  }
 }
 
 export default function RootLayout({ children }) {
