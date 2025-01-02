@@ -116,7 +116,7 @@ const Content = () => {
         />
       </div>
       <p className={styles.info}>
-        2025.3.8, 12pm <span>( 11:30 入場 )</span>
+        2025.3.8 (六), 中午12點 <span>( 11:30 入場 )</span>
       </p>
       <p className={styles.info}>
         花田盛事築夢莊園 <span>( 320桃園市中壢區普忠路618號 )</span>

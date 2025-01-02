@@ -16,6 +16,7 @@ import Logo from '../components/Logo/Logo'
 import Cover from '../components/Cover/Cover'
 import Marquee from '../components/Marquee/Marquee'
 import Invitation from '../components/Invitation/Invitation'
+import RecordPlayer from '../components/RecordPlayer/RecordPlayer'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -52,12 +53,11 @@ const Home = () => {
       style={{ overflow: isLoaded ? 'unset' : 'hidden' }}
       className={styles.container}
     >
-      <div>
-        <Logo />
-        <Cover />
-        <Marquee />
-        <Invitation />
-      </div>
+      <Logo />
+      <Cover />
+      <Marquee />
+      <Invitation />
+      <RecordPlayer />
       <Maps />
     </div>
   )
