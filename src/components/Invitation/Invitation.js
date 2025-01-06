@@ -4,16 +4,23 @@
 
 'use client'
 
+import { useState } from 'react'
+
 import styles from './Invitation.module.scss'
 
 import Content from './Content/Content'
-import Gallery from './Gallery/Gallery'
+import Envelope from './Envelope/Envelope'
 
 const Invitation = () => {
+  const [isOpen, setIsOpen] = useState(false)
+
   return (
     <div className={styles.wrapper}>
-      <Gallery />
-      <Content />
+      <Content isOpen={isOpen} />
+      <Envelope
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+      />
     </div>
   )
 }

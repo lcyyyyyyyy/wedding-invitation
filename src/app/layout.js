@@ -4,6 +4,7 @@ import Favicon from './icon.ico'
 import '../styles/default.scss'
 
 const ChenYuluoyan = localFont({ src: '../../public/fonts/ChenYuluoyan-Thin.ttf' })
+
 const isProd = process.env.NODE_ENV === 'production'
 const rootUrl = process.env.NEXT_PUBLIC_ROOT_URL
 
@@ -12,7 +13,7 @@ export const metadata = {
   title: 'FU & LIN Wedding Invitation',
   description: 'Joyfully invite you to our wedding.',
   openGraph: {
-    images: [isProd ? `${rootUrl}/2X0A4321.jpg` : '../../public/2X0A4321.jpg']
+    images: isProd ? `${rootUrl}/2X0A4321.jpg` : '../../public/2X0A4321.jpg'
   }
 }
 

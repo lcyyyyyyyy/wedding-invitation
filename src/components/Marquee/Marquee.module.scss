@@ -1,6 +1,6 @@
 .wrapper {
   width: 100%;
-  margin:  120px auto;
+  margin: 120px auto;
   padding: 1em 0;
   display: flex;
   overflow: hidden;
@@ -12,5 +12,11 @@
     color: #fff;
     font-size: 4rem;
     margin-left: 40px;
+  }
+
+  :global {
+    .rfm-marquee-container {
+      overflow: hidden;
+    }
   }
 }

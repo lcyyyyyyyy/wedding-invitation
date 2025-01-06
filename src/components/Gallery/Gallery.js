@@ -15,6 +15,8 @@ import 'swiper/scss'
 import 'swiper/scss/effect-fade'
 import styles from './Gallery.module.scss'
 
+import Heart from '@/components/Icons/Heart'
+
 register()
 gsap.registerPlugin(ScrollTrigger)
 
@@ -23,7 +25,6 @@ const Gallery = () => {
   const rootUrl = process.env.NEXT_PUBLIC_ROOT_URL
   const container = useRef(null)
   const swiperRef = useRef(null)
-  const galleryRef = useRef(null)
   const [isLoaded, setIsLoaded] = useState(false)
   const [windowHeight, setWindowHeight] = useState(0)
   const [isSwiperInit, setIsSwiperInit] = useState(false)
@@ -75,9 +76,10 @@ const Gallery = () => {
 
         gsap
           .to(`.${styles.gallery}`, {
+            y: 0,
             ease: 'power4.inOut',
-            duration: 2,
-            clipPath: 'polygon(0 0%, 100% 0%, 100% 100%, 0% 100%)',
+            opacity: 1,
+            duration: 1,
             scrollTrigger: {
               start: 'moddle bottom',
               trigger: `.${styles.gallery}`
@@ -94,6 +96,19 @@ const Gallery = () => {
               trigger: slider
             }
           })
+
+        gsap
+          .to(`.${styles.text}`, {
+            ease: 'none',
+            delay: 0.8,
+            stagger: 0.2,
+            duration: 0.2,
+            clipPath: 'polygon(0 0%, 100% 0%, 100% 100%, 0% 100%)',
+            scrollTrigger: {
+              start: 'moddle bottom',
+              trigger: slider
+            }
+          })
       }
     },
     { scope: container, dependencies: [isLoaded, isSwiperInit] }
@@ -104,45 +119,57 @@ const Gallery = () => {
       ref={container}
       className={styles.wrapper}
     >
-      {isLoaded &&
-        <div
-          ref={galleryRef}
-          className={styles.gallery}
-          style={{
-            width: `${windowHeight * 0.66}px`,
-            borderRadius: `${windowHeight * 0.5}px ${windowHeight * 0.5}px 0 0`
-          }}
-        >
-          <swiper-container
-            id='slider'
-            ref={swiperRef}
-            init='false'
-            // init={false}
+      <div className={styles.slider}>
+        {isLoaded &&
+          <div
+            className={styles.gallery}
+            style={{
+              width: `${windowHeight * 0.66}px`,
+              borderRadius: `${windowHeight * 0.5}px ${windowHeight * 0.5}px 0 0`
+            }}
           >
-            {slides?.map(slide => {
-              const image = isProd ? `${rootUrl}${slide}` : slide
+            <swiper-container
+              id='slider'
+              ref={swiperRef}
+              init='false'
+            >
+              {slides?.map(slide => {
+                const image = isProd ? `${rootUrl}${slide}` : slide
 
-              return (
-                <swiper-slide key={slide}>
-                  <div className={styles.item}>
-                    <figure
-                      style={{ backgroundImage: `url(${image})` }}
-                      className={styles.backgroundImage}
-                    >
-                      <Image
-                        alt={slide}
-                        src={slide}
-                        fill={true}
-                        sizes='100%'
-                      />
-                    </figure>
-                  </div>
-                </swiper-slide>
-              )
-            })}
-          </swiper-container>
-        </div>
-      }
+                return (
+                  <swiper-slide key={slide}>
+                    <div className={styles.item}>
+                      <figure
+                        style={{ backgroundImage: `url(${image})` }}
+                        className={styles.backgroundImage}
+                      >
+                        <Image
+                          alt={slide}
+                          src={slide}
+                          fill={true}
+                          sizes='100%'
+                        />
+                      </figure>
+                    </div>
+                  </swiper-slide>
+                )
+              })}
+            </swiper-container>
+          </div>
+        }
+      </div>
+      <div className={styles.names}>
+        <p className={styles.text}>Groom & Bride</p>
+        <h2 className={styles.text}>
+          上哲
+          <Heart
+            size={50}
+            color='#df3a3a'
+            style={{ margin: '0 25px' }}
+          />
+          丞映
+        </h2>
+      </div>
     </div>
   )
 }

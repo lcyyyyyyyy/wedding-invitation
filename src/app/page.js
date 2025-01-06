@@ -14,7 +14,10 @@ import styles from './page.module.scss'
 import Maps from '../components/Maps/Maps'
 import Logo from '../components/Logo/Logo'
 import Cover from '../components/Cover/Cover'
+import Closer from '../components/Images/Closer'
 import Marquee from '../components/Marquee/Marquee'
+import Gallery from '../components/Gallery/Gallery'
+import HoldHands from '../components/Images/HoldHands'
 import Invitation from '../components/Invitation/Invitation'
 import RecordPlayer from '../components/RecordPlayer/RecordPlayer'
 
@@ -56,7 +59,11 @@ const Home = () => {
       <Logo />
       <Cover />
       <Marquee />
+      <Gallery />
+      <h1>Joyfully invite you to our wedding</h1>
+      <HoldHands />
       <Invitation />
+      <Closer />
       <RecordPlayer />
       <Maps />
     </div>
