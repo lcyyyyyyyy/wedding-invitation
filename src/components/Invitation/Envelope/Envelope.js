@@ -11,8 +11,6 @@ import { useGSAP } from '@gsap/react'
 
 import styles from './Envelope.module.scss'
 
-import Arrow from '@/components/Icons/Arrow'
-
 gsap.registerPlugin(ScrollTrigger)
 
 const Envelope = ({
@@ -75,11 +73,6 @@ const Envelope = ({
       ref={container}
       className={`${styles.wrapper}${isOpen ? ` ${styles.open}` : ''}`}
     >
-      {/* <Arrow
-        size={100}
-        color='#222222'
-        style={{ transform: 'rotate(135deg)', marginBottom: '30px' }}
-      /> */}
       <p>喜帖到啦～</p>
       <p>點擊打開吧！</p>
       <div
@@ -95,7 +88,6 @@ const Envelope = ({
           style={triangle ? { borderWidth: `${triangle.height}px ${triangle.width}px 0 ${triangle.width}px` } : {}}
           className={`${styles.triangle} ${styles.inside}`}
         />
-        {/* <div className={`${styles.triangle} ${styles.letter}`} /> */}
         <div
           style={triangle ? { borderWidth: `0 ${triangle.width}px ${triangle.height}px ${triangle.width}px` } : {}}
           className={`${styles.triangle} ${styles.bottom}`}

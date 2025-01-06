@@ -11,6 +11,7 @@ import { useGSAP } from '@gsap/react'
 
 import styles from './page.module.scss'
 
+import Date from '../components/Date/Date'
 import Maps from '../components/Maps/Maps'
 import Logo from '../components/Logo/Logo'
 import Cover from '../components/Cover/Cover'
@@ -65,6 +66,7 @@ const Home = () => {
       <Invitation />
       <Closer />
       <RecordPlayer />
+      <Date />
       <Maps />
     </div>
   )

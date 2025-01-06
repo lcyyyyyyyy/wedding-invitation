@@ -81,7 +81,6 @@ const Gallery = () => {
             opacity: 1,
             duration: 1,
             scrollTrigger: {
-              start: 'moddle bottom',
               trigger: `.${styles.gallery}`
             }
           })

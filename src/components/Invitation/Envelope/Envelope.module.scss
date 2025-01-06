@@ -85,13 +85,4 @@
     z-index: 0;
     border-color: #864038 transparent transparent transparent;
   }
-
-  &.letter {
-    left: 50%;
-    bottom: 150px;
-    z-index: 1;
-    transform: translateX(-50%);
-    border-width: 120px 150px 0 150px;
-    border-color: #fff transparent transparent transparent;
-  }
 }
