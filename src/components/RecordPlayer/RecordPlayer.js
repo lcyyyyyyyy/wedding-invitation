@@ -13,6 +13,12 @@ const RecordPlayer = () => {
   const [paused, setPaused] = useState(true)
 
   useEffect(() => {
+    setTimeout(() => {
+      playerRef.current.style.opacity = 1
+    }, 5000)
+  }, [])
+
+  useEffect(() => {
     const playerAudio = audioRef?.current
     const playerElement = playerRef?.current
     if (paused) {
