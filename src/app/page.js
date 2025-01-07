@@ -42,7 +42,7 @@ const Home = () => {
 
         gsap.to(cover, {
           ease: 'none',
-          yPercent: 50,
+          yPercent: 100,
           scrollTrigger: {
             scrub: true
           }

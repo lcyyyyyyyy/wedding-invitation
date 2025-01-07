@@ -9,7 +9,17 @@ const isProd = process.env.NODE_ENV === 'production'
 const rootUrl = process.env.NEXT_PUBLIC_ROOT_URL
 
 export const metadata = {
-  icons: [{ rel: 'icon', url: Favicon.src }],
+  icons: {
+    icon: [
+      {
+        rel: 'icon',
+        url: Favicon.src
+      }
+    ],
+    apple: {
+      url: isProd ? `${rootUrl}/icon.png` : '../../public/icon.png'
+    }
+  },
   title: 'FU & LIN Wedding Invitation',
   description: 'Joyfully invite you to our wedding.',
   openGraph: {
