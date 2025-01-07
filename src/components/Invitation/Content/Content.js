@@ -103,7 +103,7 @@ const Content = () => {
             alt={image}
             src={isProd ? `${rootUrl}${image}` : image}
             fill={true}
-            sizes='100%'
+            sizes='100vw'
           />
         </div>
         <div className={styles.content}>

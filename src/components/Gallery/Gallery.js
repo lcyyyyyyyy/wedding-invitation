@@ -137,7 +137,7 @@ const Gallery = () => {
                           alt={slide}
                           src={slide}
                           fill={true}
-                          sizes='100%'
+                          sizes='100vw'
                         />
                       </figure>
                     </div>

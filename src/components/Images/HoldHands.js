@@ -60,6 +60,7 @@ const HoldHands = () => {
         alt={image}
         src={isProd ? `${rootUrl}${image}` : image}
         fill={true}
+        sizes='100vw'
       />
       <p>Joyfully invite you to our wedding</p>
     </div>

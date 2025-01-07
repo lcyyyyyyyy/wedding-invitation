@@ -61,6 +61,7 @@ const Closer = () => {
               alt={image}
               src={isProd ? `${rootUrl}${image}` : image}
               fill={true}
+              sizes='100vw'
             />
           </div>
         )

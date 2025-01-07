@@ -117,6 +117,7 @@ const Cover = () => {
             alt='cover image'
             src={isProd ? `${rootUrl}${coverImage}` : coverImage}
             fill={true}
+            sizes='100vw'
             priority={true}
           />
 
