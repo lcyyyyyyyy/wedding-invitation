@@ -17,7 +17,6 @@
   display: flex;
   overflow: hidden;
   position: relative;
-  transition: 0.1s;
   align-items: center;
   justify-content: center;
 
@@ -34,7 +33,6 @@
   overflow: hidden;
   position: relative;
   transform: translateY(50px);
-  transition: 0.1s;
   border-radius: 100vh * 0.5 100vh * 0.5 0 0;
 
   swiper-container {

@@ -96,7 +96,7 @@ const Cover = () => {
         style={{ height: `${windowHeight}px` }}
         className={`${styles.clipper} ${styles.left}`}
       >
-        <div className={styles.text}>FU & LIN</div>
+        <div className={styles.text}>FU&nbsp;&nbsp;&&nbsp;&nbsp;LIN</div>
       </div>
       <div
         style={{ height: `${windowHeight}px` }}
