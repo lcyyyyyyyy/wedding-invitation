@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import Marquee from 'react-fast-marquee'
 import ScrollTrigger from 'gsap/ScrollTrigger'
@@ -12,26 +12,34 @@ gsap.registerPlugin(ScrollTrigger)
 
 const MarqueeComponent = () => {
   const container = useRef(null)
+  const [isLoaded, setIsLoaded] = useState(false)
+
+  useEffect(() => {
+    setIsLoaded(true)
+  }, [])
 
   useGSAP(
     () => {
-      const marquee = document.getElementById('marquee')
+      if (isLoaded) {
+        const marquee = document.getElementById('marquee')
 
-      gsap
-        .from(marquee, {
-          ease: 'in',
-          duration: 0.6,
-          yPercent: 100,
-          scrollTrigger: {
-            start: 'top bottom',
-            trigger: marquee
-          }
-        })
+        gsap
+          .from(marquee, {
+            ease: 'in',
+            duration: 0.6,
+            yPercent: 100,
+            scrollTrigger: {
+              start: 'top bottom',
+              trigger: marquee
+            }
+          })
+      }
     },
     { scope: container }
   )
 
   return (
+    isLoaded &&
     <div
       id='marquee'
       ref={container}

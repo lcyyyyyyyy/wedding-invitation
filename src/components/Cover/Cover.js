@@ -3,9 +3,12 @@
 import { useRef, useState, useEffect } from 'react'
 import gsap from 'gsap'
 import Image from 'next/image'
+import localFont from 'next/font/local'
 import { useGSAP } from '@gsap/react'
 
 import styles from './Cover.module.scss'
+
+const AlohaMagazineLight = localFont({ src: '../../../public/fonts/AlohaMagazine-Light.ttf' })
 
 const Cover = () => {
   const isProd = process.env.NODE_ENV === 'production'
@@ -13,8 +16,10 @@ const Cover = () => {
   const container = useRef(null)
   const coverImage = '/2X0A4321.jpg'
   const [isLoaded, setIsLoaded] = useState(false)
+  const [windowHeight, setWindowHeight] = useState(0)
 
   useEffect(() => {
+    setWindowHeight(window.innerHeight)
     document.fonts.ready.then(() => {
       setIsLoaded(true)
     })
@@ -61,26 +66,52 @@ const Cover = () => {
             display: 'none',
             duration: 0.2
           })
+
+        gsap
+          .to(`.${styles.invitation} span`, {
+            y: 0,
+            ease: 'power3.inOut',
+            delay: 2.3,
+            opacity: 1,
+            stagger: 0.1,
+            duration: 1
+          })
       }
     },
     { scope: container, dependencies: [isLoaded] }
   )
 
   return (
-    <div ref={container} className={styles.wrapper}>
+    <div
+      ref={container}
+      style={{ height: `${windowHeight}px` }}
+      className={styles.wrapper}
+    >
       <div className={styles.preLoader}>
         <div className={styles.loaderWrapper}>
           <div className={styles.loader} />
         </div>
       </div>
-      <div className={`${styles.clipper} ${styles.left}`}>
+      <div
+        style={{ height: `${windowHeight}px` }}
+        className={`${styles.clipper} ${styles.left}`}
+      >
         <div className={styles.text}>FU & LIN</div>
       </div>
-      <div className={`${styles.clipper} ${styles.right}`}>
+      <div
+        style={{ height: `${windowHeight}px` }}
+        className={`${styles.clipper} ${styles.right}`}
+      >
         <div className={styles.text}>2025/3/8</div>
       </div>
-      <div className={styles.content}>
-        <div className={styles.cover}>
+      <div
+        style={{ height: `${windowHeight}px` }}
+        className={styles.content}
+      >
+        <div
+          style={{ minHeight: `${windowHeight}px` }}
+          className={styles.cover}
+        >
           <Image
             id='cover'
             alt='cover image'
@@ -88,6 +119,19 @@ const Cover = () => {
             fill={true}
             priority={true}
           />
+
+          <div className={`${styles.invitation} ${AlohaMagazineLight.className}`}>
+            <span>I</span>
+            <span>N</span>
+            <span>V</span>
+            <span>I</span>
+            <span>T</span>
+            <span>A</span>
+            <span>T</span>
+            <span>I</span>
+            <span>O</span>
+            <span>N</span>
+          </div>
         </div>
       </div>
     </div>

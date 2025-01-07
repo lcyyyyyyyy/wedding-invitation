@@ -90,11 +90,45 @@
 .cover {
   top: 0;
   left: 0;
+  overflow: hidden;
   position: absolute;
   min-width: 100%;
   min-height: 100vh;
 
   img {
     object-fit: cover;
+  }
+
+  .invitation {
+    width: 100%;
+    bottom: -20px;
+    z-index: 1;
+    display: flex;
+    position: absolute;
+
+    span {
+      flex: 1;
+      color: #fff;
+      opacity: 0;
+      transform: translateY(20px);
+      font-size: 6rem;
+      text-align: center;
+    }
+
+    @media (min-width: 480px) {
+      bottom: -35px;
+
+      span {
+        font-size: 10rem;
+      }
+    }
+
+    @media (min-width: 900px) {
+      bottom: -40px;
+
+      span {
+        font-size: 12rem;
+      }
+    }
   }
 }
