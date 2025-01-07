@@ -26,7 +26,6 @@ const Gallery = () => {
   const container = useRef(null)
   const swiperRef = useRef(null)
   const [isLoaded, setIsLoaded] = useState(false)
-  const [windowHeight, setWindowHeight] = useState(0)
   const [isSwiperInit, setIsSwiperInit] = useState(false)
   const slides = [
     '/2X0A4229.jpg',
@@ -64,8 +63,6 @@ const Gallery = () => {
 
       Object.assign(swiperEl, params)
       swiperEl.initialize()
-
-      setWindowHeight(swiperEl?.clientHeight)
     }
   }, [isLoaded])
 
@@ -120,13 +117,7 @@ const Gallery = () => {
     >
       <div className={styles.slider}>
         {isLoaded &&
-          <div
-            className={styles.gallery}
-            style={{
-              width: `${windowHeight * 0.66}px`,
-              borderRadius: `${windowHeight * 0.5}px ${windowHeight * 0.5}px 0 0`
-            }}
-          >
+          <div className={styles.gallery}>
             <swiper-container
               id='slider'
               ref={swiperRef}

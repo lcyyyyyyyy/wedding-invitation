@@ -30,12 +30,13 @@
 }
 
 .gallery {
-  width: 100%;
+  width: calc(100vh * 0.66);
   height: 100%;
   opacity: 0;
   overflow: hidden;
   position: relative;
   transform: translateY(50px);
+  border-radius: 100vh * 0.5 100vh * 0.5 0 0;
 
   swiper-container {
     width: 100%;
@@ -48,6 +49,10 @@
     overflow: hidden;
     position: relative;
   }
+
+  // @media (min-width: 1060px) {
+  //   width: calc(50vw * 0.66);
+  // }
 }
 
 .item {
