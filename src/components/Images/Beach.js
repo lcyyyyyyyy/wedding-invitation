@@ -50,7 +50,7 @@ const Beach = () => {
               alt={image}
               src={isProd ? `${rootUrl}${image}` : image}
               fill={true}
-              sizes='50vw'
+              sizes='(max-width: 640px) 300px, 50vw'
             />
           </div>
         )

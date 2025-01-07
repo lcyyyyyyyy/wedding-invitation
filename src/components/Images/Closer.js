@@ -61,7 +61,7 @@ const Closer = () => {
               alt={image}
               src={isProd ? `${rootUrl}${image}` : image}
               fill={true}
-              sizes='100vw'
+              sizes='(max-width: 640px) 400px, 100vw'
             />
           </div>
         )
