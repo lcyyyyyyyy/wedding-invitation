@@ -137,7 +137,7 @@ const Gallery = () => {
                           alt={slide}
                           src={slide}
                           fill={true}
-                          sizes='(max-width: 640px) 50vw, 500px'
+                          sizes='(max-width: 480px) 400px, (max-width: 640px) 600px, 500px'
                         />
                       </figure>
                     </div>
