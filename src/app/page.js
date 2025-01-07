@@ -28,8 +28,10 @@ gsap.registerPlugin(ScrollTrigger)
 const Home = () => {
   const container = useRef(null)
   const [isLoaded, setIsLoaded] = useState(false)
+  const [windowHeight, setWindowHeight] = useState(0)
 
   useEffect(() => {
+    setWindowHeight(window.innerHeight)
     setTimeout(() => {
       setIsLoaded(true)
     }, 4000)
@@ -55,7 +57,10 @@ const Home = () => {
   return (
     <div
       ref={container}
-      style={{ overflow: isLoaded ? 'unset' : 'hidden' }}
+      style={{
+        height: `${windowHeight}px`,
+        overflow: isLoaded ? 'unset' : 'hidden'
+      }}
       className={styles.container}
     >
       <Logo />

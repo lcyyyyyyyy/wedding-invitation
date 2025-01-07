@@ -34,12 +34,12 @@
 .clipper {
   top: 0;
   height: 100vh;
+  z-index: 1;
   display: flex;
   overflow: clip;
   position: absolute;
   clip-path: inset(0 0 0 0);
   background: #fff;
-  z-index: 1;
 
   &.left {
     left: 0;
