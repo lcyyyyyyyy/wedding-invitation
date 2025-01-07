@@ -129,7 +129,6 @@ const Content = () => {
               <h5>傅阿松 ． 傅高金妹</h5>
               <h5>傅金寶 ． 陳秀貞</h5>
             </div>
-            {/* <span className={styles.and}>&</span> */}
             <div className={styles.block}>
               <h4>
                 丞映

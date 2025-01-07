@@ -71,7 +71,7 @@ const Cover = () => {
           .to(`.${styles.invitation} span`, {
             y: 0,
             ease: 'power3.inOut',
-            delay: 2.3,
+            delay: 2.5,
             opacity: 1,
             stagger: 0.1,
             duration: 1
