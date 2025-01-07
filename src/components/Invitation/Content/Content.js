@@ -127,7 +127,6 @@ const Content = () => {
               </h4>
               <h5>－ 男方家長 －</h5>
               <h5>傅金寶 ． 陳秀貞</h5>
-              <h5>－ 祖父母 －</h5>
               <h5>傅阿松 ． 傅高金妹</h5>
             </div>
             {/* <span className={styles.and}>&</span> */}
@@ -144,8 +143,7 @@ const Content = () => {
               </h4>
               <h5>－ 女方家長 －</h5>
               <h5>林錦祥 ． 陳麗蓮</h5>
-              <h5>－ 祖父母 －</h5>
-              <h5>林溪川 ． 林謝玉蘭</h5>
+              <h5>林溪川</h5>
             </div>
           </div>
           <div className={styles.info}>
