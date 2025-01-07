@@ -86,7 +86,6 @@ const Cover = () => {
             alt='cover image'
             src={isProd ? `${rootUrl}${coverImage}` : coverImage}
             fill={true}
-            style={{ objectFit: 'cover' }}
             priority={true}
           />
         </div>

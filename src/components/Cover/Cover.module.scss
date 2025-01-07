@@ -94,11 +94,7 @@
   min-width: 100%;
   min-height: 100vh;
 
-  .image {
-    top: 0;
-    left: 0;
-    position: absolute;
-    min-width: 100%;
-    min-height: 100vh;
+  img {
+    object-fit: cover;
   }
 }

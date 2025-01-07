@@ -11,6 +11,8 @@ import { useGSAP } from '@gsap/react'
 
 import styles from './Envelope.module.scss'
 
+import Arrow from '@/components/Icons/Arrow'
+
 gsap.registerPlugin(ScrollTrigger)
 
 const Envelope = ({
@@ -75,6 +77,10 @@ const Envelope = ({
     >
       <p>喜帖到啦～</p>
       <p>點擊打開吧！</p>
+      <Arrow
+        size={150}
+        color='#222222'
+      />
       <div
         ref={envelopeRef}
         onClick={() => setIsOpen(!isOpen)}

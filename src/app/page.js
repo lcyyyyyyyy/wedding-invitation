@@ -14,6 +14,7 @@ import styles from './page.module.scss'
 import Date from '../components/Date/Date'
 import Maps from '../components/Maps/Maps'
 import Logo from '../components/Logo/Logo'
+import Beach from '../components/Images/Beach'
 import Cover from '../components/Cover/Cover'
 import Closer from '../components/Images/Closer'
 import Marquee from '../components/Marquee/Marquee'
@@ -61,12 +62,13 @@ const Home = () => {
       <Cover />
       <Marquee />
       <Gallery />
-      <h1>Joyfully invite you to our wedding</h1>
       <HoldHands />
       <Invitation />
       <Closer />
       <RecordPlayer />
       <Date />
+      <Beach />
+      <h1>好久不見，婚禮見！</h1>
       <Maps />
     </div>
   )

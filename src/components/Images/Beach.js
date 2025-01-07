@@ -4,15 +4,14 @@ import Image from 'next/image'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
 
-import styles from './HoldHands.module.scss'
+import styles from './Beach.module.scss'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const HoldHands = () => {
-  const image = '/2X0A4352.jpg'
+const Beach = () => {
+  const images = ['/2X0A4645.jpg', '/2X0A4655.jpg', '/2X0A4659.jpg', '/2X0A4647.jpg']
   const isProd = process.env.NODE_ENV === 'production'
   const rootUrl = process.env.NEXT_PUBLIC_ROOT_URL
-  const imageRef = useRef(null)
   const container = useRef(null)
   const [isLoaded, setIsLoaded] = useState(false)
 
@@ -23,26 +22,15 @@ const HoldHands = () => {
   useGSAP(
     () => {
       if (isLoaded) {
-        const image = imageRef?.current
-
         gsap
-          .to(image, {
+          .to(`.${styles.image}`, {
             ease: 'power4.inOut',
-            opacity: 1,
+            stagger: 0.1,
             duration: 1,
+            clipPath: 'polygon(0 0%, 100% 0%, 100% 100%, 0% 100%)',
             scrollTrigger: {
-              trigger: image
-            }
-          })
-
-        gsap
-          .to(image, {
-            ease: 'none',
-            yPercent: 20,
-            scrollTrigger: {
-              scrub: true,
-              start: 'top top',
-              trigger: image
+              start: 'top bottom-=20%',
+              trigger: `.${styles.image}`
             }
           })
       }
@@ -55,15 +43,20 @@ const HoldHands = () => {
       ref={container}
       className={styles.wrapper}
     >
-      <Image
-        ref={imageRef}
-        alt={image}
-        src={isProd ? `${rootUrl}${image}` : image}
-        fill={true}
-      />
-      <p>Joyfully invite you to our wedding</p>
+      {images?.map(image => {
+        return (
+          <div key={image} className={styles.image}>
+            <Image
+              alt={image}
+              src={isProd ? `${rootUrl}${image}` : image}
+              fill={true}
+              sizes='(max-width: 640px) 50vw, 35vw'
+            />
+          </div>
+        )
+      })}
     </div>
   )
 }
 
-export default HoldHands
+export default Beach

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import gsap from 'gsap'
 import Image from 'next/image'
 import ScrollTrigger from 'gsap/ScrollTrigger'
@@ -12,7 +12,6 @@ const Closer = () => {
   const images = ['/2X0A4470.jpg', '/2X0A4471.jpg', '/2X0A4472.jpg']
   const isProd = process.env.NODE_ENV === 'production'
   const rootUrl = process.env.NEXT_PUBLIC_ROOT_URL
-  const imageRef = useRef(null)
   const container = useRef(null)
   const [isLoaded, setIsLoaded] = useState(false)
 
