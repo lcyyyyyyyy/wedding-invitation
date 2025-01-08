@@ -1,10 +1,13 @@
 import { useRef, useState, useEffect } from 'react'
 import gsap from 'gsap'
 import Image from 'next/image'
+import localFont from 'next/font/local'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
 
 import styles from './HoldHands.module.scss'
+
+const AlohaMagazineLight = localFont({ src: '../../../public/fonts/AlohaMagazine-Light.ttf' })
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -47,6 +50,17 @@ const HoldHands = () => {
               trigger: image
             }
           })
+
+        gsap
+          .to(`.${styles.text} span`, {
+            y: 0,
+            ease: 'power3.inOut',
+            opacity: 1,
+            stagger: 0.05,
+            scrollTrigger: {
+              trigger: image
+            }
+          })
       }
     },
     { scope: container, dependencies: [isLoaded] }
@@ -64,7 +78,49 @@ const HoldHands = () => {
         fill={true}
         sizes='100vw'
       />
-      <p>Joyfully invite you to our wedding</p>
+      <div className={`${styles.text} ${AlohaMagazineLight.className}`}>
+        <div className={styles.line}>
+          <span>J</span>
+          <span>O</span>
+          <span>Y</span>
+          <span>F</span>
+          <span>U</span>
+          <span>L</span>
+          <span>L</span>
+          <span>Y</span>
+          &nbsp;
+          &nbsp;
+          <span>I</span>
+          <span>N</span>
+          <span>V</span>
+          <span>I</span>
+          <span>T</span>
+          <span>E</span>
+        </div>
+        <div className={styles.line}>
+          <span>Y</span>
+          <span>O</span>
+          <span>U</span>
+        </div>
+        <div className={styles.line}>
+          <span>T</span>
+          <span>O</span>
+          &nbsp;
+          &nbsp;
+          <span>O</span>
+          <span>U</span>
+          <span>R</span>
+        </div>
+        <div className={styles.line}>
+          <span>W</span>
+          <span>E</span>
+          <span>D</span>
+          <span>D</span>
+          <span>I</span>
+          <span>N</span>
+          <span>G</span>
+        </div>
+      </div>
     </div>
   )
 }

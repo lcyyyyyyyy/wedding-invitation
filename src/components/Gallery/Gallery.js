@@ -153,7 +153,7 @@ const Gallery = () => {
           上哲
           <Heart
             size={50}
-            color='#df3a3a'
+            color='#b82a2a'
             style={{ margin: '0 25px' }}
           />
           丞映
