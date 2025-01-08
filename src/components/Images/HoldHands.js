@@ -45,7 +45,7 @@ const HoldHands = () => {
             yPercent: 20,
             scrollTrigger: {
               scrub: true,
-              start: 'top center',
+              start: 'top top+=20%',
               trigger: image
             }
           })
