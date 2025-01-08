@@ -49,17 +49,6 @@ const HoldHands = () => {
               trigger: image
             }
           })
-
-        gsap
-          .to(`.${styles.text} span`, {
-            y: 0,
-            ease: 'power3.inOut',
-            opacity: 1,
-            stagger: 0.05,
-            scrollTrigger: {
-              trigger: image
-            }
-          })
       }
     },
     { scope: container, dependencies: [isLoaded] }

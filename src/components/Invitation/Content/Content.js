@@ -7,6 +7,7 @@
 import { useRef, useState, useEffect } from 'react'
 import gsap from 'gsap'
 import Image from 'next/image'
+import localFont from 'next/font/local'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
 
@@ -16,6 +17,8 @@ import Star from '@/components/Icons/Star'
 import KissMale from '@/components/Icons/KissMale'
 import Champagne from '@/components/Icons/Champagne'
 import KissFemale from '@/components/Icons/KissFemale'
+
+const Song = localFont({ src: '../../../../public/fonts/Song.ttf' })
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -97,13 +100,13 @@ const Content = () => {
         </div>
         <div className={styles.content}>
           <h2 className='line'>We Got Married!</h2>
-          <h3 className='line'>特別的日子，希望有你的參與
+          <h3 className='line'>特別的日子，希望有您的參與
             <Champagne
               size={46}
               color='#222222'
             />
           </h3>
-          <div className={styles.names}>
+          <div className={`${styles.names} ${Song.className}`}>
             <div className={styles.block}>
               <h4>
                 上哲
@@ -141,10 +144,10 @@ const Content = () => {
               color='#fefe8b'
             />
           </div>
-          <p className={styles.info}>
+          <p className={`${styles.info} ${Song.className}`}>
             2025.3.8 (六), 中午12點 <span>( 11:30 入席 )</span>
           </p>
-          <p className={styles.info}>
+          <p className={`${styles.info} ${Song.className}`}>
             花田盛事築夢莊園 <span>( 320桃園市中壢區普忠路618號 )</span>
           </p>
         </div>
