@@ -20,7 +20,7 @@ const Cover = () => {
 
   useEffect(() => {
     const windowWidth = window.innerWidth
-    if (windowWidth > 1200) setImage('/2X0A4321.jpg')
+    if (windowWidth > 560) setImage('/2X0A4321.jpg')
 
     setWindowHeight(window.innerHeight)
 
@@ -100,13 +100,13 @@ const Cover = () => {
         style={{ height: `${windowHeight}px` }}
         className={`${styles.clipper} ${styles.left}`}
       >
-        <div className={styles.text}>FU&nbsp;&nbsp;&&nbsp;&nbsp;LIN</div>
+        <p className={styles.text}>FU&nbsp;&nbsp;&&nbsp;&nbsp;LIN</p>
       </div>
       <div
         style={{ height: `${windowHeight}px` }}
         className={`${styles.clipper} ${styles.right}`}
       >
-        <div className={styles.text}>2025/3/8</div>
+        <p className={styles.text}>2025/3/8</p>
       </div>
       <div
         style={{ height: `${windowHeight}px` }}

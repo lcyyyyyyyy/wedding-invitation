@@ -43,7 +43,6 @@ const RecordPlayer = () => {
             alt={cover}
             src={isProd ? `${rootUrl}${cover}` : cover}
             fill={true}
-            sizes='(max-width: 560px) 40px, 50px'
           />
           <div className={styles.hole} />
         </div>

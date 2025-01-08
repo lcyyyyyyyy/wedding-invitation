@@ -40,6 +40,7 @@
   position: absolute;
   clip-path: inset(0 0 0 0);
   background: #fff;
+  align-items: center;
 
   &.left {
     left: 0;
@@ -61,7 +62,6 @@
   .text {
     color: #000;
     width: max-content;
-    height: 100%;
     padding: 50px;
     display: flex;
     opacity: 0;

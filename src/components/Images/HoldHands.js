@@ -9,14 +9,16 @@ import styles from './HoldHands.module.scss'
 gsap.registerPlugin(ScrollTrigger)
 
 const HoldHands = () => {
-  const image = '/2X0A4352.jpg'
   const isProd = process.env.NODE_ENV === 'production'
   const rootUrl = process.env.NEXT_PUBLIC_ROOT_URL
   const imageRef = useRef(null)
   const container = useRef(null)
+  const [image, setImage] = useState('/2X0A4352-800.jpg')
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
+    const windowWidth = window.innerWidth
+    if (windowWidth > 560) setImage('/2X0A4352.jpg')
     setIsLoaded(true)
   }, [])
 

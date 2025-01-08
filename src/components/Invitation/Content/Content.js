@@ -20,13 +20,15 @@ import KissFemale from '@/components/Icons/KissFemale'
 gsap.registerPlugin(ScrollTrigger)
 
 const Content = () => {
-  const image = '/2X0A4512.jpg'
   const isProd = process.env.NODE_ENV === 'production'
   const rootUrl = process.env.NEXT_PUBLIC_ROOT_URL
   const container = useRef(null)
+  const [image, setImage] = useState('/2X0A4512-750.jpg')
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
+    const windowWidth = window.innerWidth
+    if (windowWidth > 560) setImage('/2X0A4512.jpg')
     setIsLoaded(true)
   }, [])
 
@@ -103,7 +105,6 @@ const Content = () => {
             alt={image}
             src={isProd ? `${rootUrl}${image}` : image}
             fill={true}
-            sizes='(max-width: 640px) 100vw, 500px'
           />
         </div>
         <div className={styles.content}>
