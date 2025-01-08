@@ -14,12 +14,16 @@ const Cover = () => {
   const isProd = process.env.NODE_ENV === 'production'
   const rootUrl = process.env.NEXT_PUBLIC_ROOT_URL
   const container = useRef(null)
-  const coverImage = '/2X0A4321.jpg'
+  const [image, setImage] = useState('/2X0A4321-1000.jpg')
   const [isLoaded, setIsLoaded] = useState(false)
   const [windowHeight, setWindowHeight] = useState(0)
 
   useEffect(() => {
+    const windowWidth = window.innerWidth
+    if (windowWidth > 1200) setImage('/2X0A4321.jpg')
+
     setWindowHeight(window.innerHeight)
+
     document.fonts.ready.then(() => {
       setIsLoaded(true)
     })
@@ -114,10 +118,9 @@ const Cover = () => {
         >
           <Image
             id='cover'
-            alt='cover image'
-            src={isProd ? `${rootUrl}${coverImage}` : coverImage}
+            alt='Cover image'
+            src={isProd ? `${rootUrl}${image}` : image}
             fill={true}
-            sizes='(max-width: 900px) 100vw, 90vw'
             priority={true}
           />
 
