@@ -14,7 +14,7 @@ const Cover = () => {
   const isProd = process.env.NODE_ENV === 'production'
   const rootUrl = process.env.NEXT_PUBLIC_ROOT_URL
   const container = useRef(null)
-  const [image, setImage] = useState('/2X0A4321-1000.jpg')
+  const [image, setImage] = useState('/2X0A4321-600.jpg')
   const [isLoaded, setIsLoaded] = useState(false)
   const [windowHeight, setWindowHeight] = useState(0)
 
