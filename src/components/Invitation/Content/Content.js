@@ -37,7 +37,7 @@ const Content = () => {
       if (isLoaded) {
         const tl = gsap.timeline({
           scrollTrigger: {
-            start: 'top bottom-=10%',
+            start: 'top bottom-=20vw',
             trigger: `.${styles.wrapper}`
           }
         })
@@ -46,7 +46,6 @@ const Content = () => {
           .to(`.${styles.wrapper}`, {
             y: 0,
             ease: 'power4.out',
-            delay: 0.6,
             opacity: 1,
             duration: 1
           })
@@ -77,17 +76,6 @@ const Content = () => {
             stagger: 0.2,
             clipPath: 'polygon(0 0%, 100% 0%, 100% 100%, 0% 100%)',
             duration: 1
-          })
-
-        gsap
-          .to(`.${styles.image} img`, {
-            ease: 'none',
-            yPercent: 20,
-            scrollTrigger: {
-              scrub: true,
-              start: 'top top',
-              trigger: `.${styles.image} img`
-            }
           })
       }
     },

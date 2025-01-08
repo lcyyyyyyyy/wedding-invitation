@@ -1,107 +1,20 @@
 .wrapper {
   width: 100%;
-  height: calc(100vw * 0.5);
   margin: 100px 0;
-  overflow: hidden;
-  position: relative;
 
-  img {
+  .image {
+    width: 100%;
+    height: calc(100vw * 0.8);
     opacity: 0;
-    object-fit: cover;
-    object-position: left;
-  }
+    overflow: hidden;
 
-  .text {
-    color: #fff;
-    right: 0;
-    bottom: -5px;
-    position: absolute;
-
-    @media (min-width: 480px) {
-      bottom: -10px;
+    @media (min-width: 560px) {
+      height: calc(100vw * 0.5);
     }
 
-    .line {
-      display: flex;
-      justify-content: flex-end;
-
-      span {
-        opacity: 0;
-        transform: translateY(20px);
-        font-size: 4rem;
-        line-height: 3rem;
-      }
-
-      &:last-child {
-        span {
-          color: #b82a2a;
-          font-size: 6rem;
-          line-height: 4rem;
-        }
-      }
-
-      // @media (min-width: 480px) {
-      //   span {
-      //     font-size: 6rem;
-      //     line-height: 5rem;
-      //   }
-      // }
-
-      @media (min-width: 640px) {
-        span {
-          font-size: 8rem;
-          line-height: 6rem;
-        }
-
-        &:last-child {
-          span {
-            font-size: 10rem;
-            line-height: 7rem;
-          }
-        }
-      }
-
-      @media (min-width: 768px) {
-        span {
-          font-size: 10rem;
-          line-height: 7rem;
-        }
-
-        &:last-child {
-          span {
-            font-size: 12rem;
-            line-height: 8rem;
-          }
-        }
-      }
-
-      @media (min-width: 1060px) {
-        span {
-          font-size: 12rem;
-          line-height: 8rem;
-        }
-
-        &:last-child {
-          span {
-            font-size: 14rem;
-            line-height: 9rem;
-          }
-        }
-      }
+    img {
+      object-fit: cover;
+      object-position: left;
     }
-  }
-
-  @media (min-width: 480px) {
-    height: calc(100vw * 0.4);
-  }
-
-  @media (min-width: 640px) {
-    p {
-      font-size: 5rem;
-    }
-  }
-
-  @media (min-width: 900px) {
-    height: calc(100vw * 0.3);
   }
 }
