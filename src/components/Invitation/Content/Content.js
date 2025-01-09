@@ -14,11 +14,12 @@ import { useGSAP } from '@gsap/react'
 import styles from './Content.module.scss'
 
 import Star from '@/components/Icons/Star'
+import Brides from '@/components/Icons/Brides'
+import Grooms from '@/components/Icons/Grooms'
 import KissMale from '@/components/Icons/KissMale'
 import Champagne from '@/components/Icons/Champagne'
 import KissFemale from '@/components/Icons/KissFemale'
-
-const Song = localFont({ src: '../../../../public/fonts/Song.ttf' })
+import DateLocation from '@/components/Icons/DateLocation'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -103,10 +104,10 @@ const Content = () => {
           <h3 className='line'>特別的日子，希望有您的參與
             <Champagne
               size={46}
-              color='#222222'
+              color='#888888'
             />
           </h3>
-          <div className={`${styles.names} ${Song.className}`}>
+          <div className={styles.names}>
             <div className={styles.block}>
               <h4>
                 上哲
@@ -117,9 +118,12 @@ const Content = () => {
                   />
                 </div>
               </h4>
-              <h5>－ 男方家長 －</h5>
-              <h5>傅阿松 ． 傅高金妹</h5>
-              <h5>傅金寶 ． 陳秀貞</h5>
+              <div className={styles.svg}>
+                <Grooms
+                  size='100%'
+                  color='#222222'
+                />
+              </div>
             </div>
             <div className={styles.block}>
               <h4>
@@ -132,9 +136,12 @@ const Content = () => {
                   />
                 </div>
               </h4>
-              <h5>－ 女方家長 －</h5>
-              <h5>林溪川</h5>
-              <h5>林錦祥 ． 陳麗蓮</h5>
+              <div className={styles.svg}>
+                <Brides
+                  size='100%'
+                  color='#222222'
+                />
+              </div>
             </div>
           </div>
           <div className={styles.info}>
@@ -144,12 +151,14 @@ const Content = () => {
               color='#fefe8b'
             />
           </div>
-          <p className={`${styles.info} ${Song.className}`}>
-            2025.3.8 (六), 中午12點 <span>( 11:30 入席 )</span>
-          </p>
-          <p className={`${styles.info} ${Song.className}`}>
-            花田盛事築夢莊園 <span>( 320桃園市中壢區普忠路618號 )</span>
-          </p>
+          <div className={styles.info}>
+            <div className={styles.svg}>
+              <DateLocation
+                size='100%'
+                color='#222222'
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
