@@ -23,7 +23,7 @@ export const metadata = {
   title: 'FU & LIN Wedding Invitation',
   description: 'Joyfully invite you to our wedding.',
   openGraph: {
-    images: isProd ? `${rootUrl}/2X0A4321.jpg` : '../../public/2X0A4321.jpg'
+    images: isProd ? `${rootUrl}/2X0A4321.webp` : '../../public/2X0A4321.webp'
   }
 }
 

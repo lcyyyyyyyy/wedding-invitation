@@ -9,7 +9,7 @@ import styles from './RecordPlayer.module.scss'
 
 const RecordPlayer = () => {
   const audio = '/Sunny.mp3'
-  const cover = '/Rocco-Sunny.png'
+  const cover = '/Rocco-Sunny.webp'
   const isProd = process.env.NODE_ENV === 'production'
   const rootUrl = process.env.NEXT_PUBLIC_ROOT_URL
   const audioRef = useRef(null)

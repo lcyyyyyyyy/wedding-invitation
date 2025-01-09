@@ -26,12 +26,12 @@ const Content = () => {
   const isProd = process.env.NODE_ENV === 'production'
   const rootUrl = process.env.NEXT_PUBLIC_ROOT_URL
   const container = useRef(null)
-  const [image, setImage] = useState('/2X0A4512-750.jpg')
+  const [image, setImage] = useState('/2X0A4512-750.webp')
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
     const windowWidth = window.innerWidth
-    if (windowWidth > 560) setImage('/2X0A4512.jpg')
+    if (windowWidth > 560) setImage('/2X0A4512.webp')
     setIsLoaded(true)
   }, [])
 

@@ -13,7 +13,7 @@ import styles from './Closer.module.scss'
 gsap.registerPlugin(ScrollTrigger)
 
 const Closer = () => {
-  const [images, setImages] = useState(['/2X0A4470-800.jpg', '/2X0A4471-800.jpg', '/2X0A4472-800.jpg'])
+  const [images, setImages] = useState(['/2X0A4470-800.webp', '/2X0A4471-800.webp', '/2X0A4472-800.webp'])
   const isProd = process.env.NODE_ENV === 'production'
   const rootUrl = process.env.NEXT_PUBLIC_ROOT_URL
   const container = useRef(null)
@@ -21,7 +21,7 @@ const Closer = () => {
 
   useEffect(() => {
     const windowWidth = window.innerWidth
-    if (windowWidth > 560) setImages(['/2X0A4470.jpg', '/2X0A4471.jpg', '/2X0A4472.jpg'])
+    if (windowWidth > 560) setImages(['/2X0A4470.webp', '/2X0A4471.webp', '/2X0A4472.webp'])
     setIsLoaded(true)
   }, [])
 

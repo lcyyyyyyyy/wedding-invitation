@@ -13,7 +13,7 @@ import styles from './Beach.module.scss'
 gsap.registerPlugin(ScrollTrigger)
 
 const Beach = () => {
-  const images = ['/2X0A4645.jpg', '/2X0A4655.jpg', '/2X0A4659.jpg', '/2X0A4647.jpg']
+  const images = ['/2X0A4645.webp', '/2X0A4655.webp', '/2X0A4659.webp', '/2X0A4647.webp']
   const isProd = process.env.NODE_ENV === 'production'
   const rootUrl = process.env.NEXT_PUBLIC_ROOT_URL
   const container = useRef(null)

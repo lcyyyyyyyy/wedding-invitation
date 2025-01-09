@@ -28,12 +28,12 @@ const Gallery = () => {
   const [isLoaded, setIsLoaded] = useState(false)
   const [isSwiperInit, setIsSwiperInit] = useState(false)
   const slides = [
-    '/2X0A4229.jpg',
-    '/2X0A4275.jpg',
-    '/2X0A4267.jpg',
-    '/2X0A4286.jpg',
-    '/2X0A4291.jpg',
-    '/2X0A4294.jpg'
+    '/2X0A4229.webp',
+    '/2X0A4275.webp',
+    '/2X0A4267.webp',
+    '/2X0A4286.webp',
+    '/2X0A4291.webp',
+    '/2X0A4294.webp'
   ]
 
   useEffect(() => {
