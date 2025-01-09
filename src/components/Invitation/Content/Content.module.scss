@@ -124,23 +124,13 @@
   position: absolute;
 
   &.male {
-    right: -40px;
+    right: 20px;
     transform: translate(-30px, -50%);
   }
 
   &.female {
-    left: -40px;
+    left: 20px;
     transform: translate(30px, -50%);
-  }
-
-  @media (min-width: 900px) {
-    &.male {
-      right: -70px;
-    }
-
-    &.female {
-      left: -70px;
-    }
   }
 }
 

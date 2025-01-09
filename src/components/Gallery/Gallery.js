@@ -1,5 +1,5 @@
 /**
- * @file src/components/Invitation/Invitation.js
+ * @file src/app/page.js
  */
 
 'use client'

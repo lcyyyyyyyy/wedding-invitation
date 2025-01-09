@@ -1,3 +1,7 @@
+/**
+ * @file src/app/page.js
+ */
+
 import { useEffect } from 'react'
 import gsap from 'gsap'
 

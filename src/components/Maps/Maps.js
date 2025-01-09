@@ -1,3 +1,7 @@
+/**
+ * @file src/app/page.js
+ */
+
 import styles from './Maps.module.scss'
 
 const Maps = () => {

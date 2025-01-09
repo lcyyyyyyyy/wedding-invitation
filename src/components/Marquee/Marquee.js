@@ -1,3 +1,7 @@
+/**
+ * @file src/app/page.js
+ */
+
 'use client'
 
 import { useEffect, useRef, useState } from 'react'

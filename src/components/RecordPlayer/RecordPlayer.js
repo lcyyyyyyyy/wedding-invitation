@@ -1,7 +1,11 @@
+/**
+ * @file src/app/page.js
+ */
+
+import { useRef, useState, useEffect } from 'react'
 import Image from 'next/image'
 
 import styles from './RecordPlayer.module.scss'
-import { useRef, useState, useEffect } from 'react'
 
 const RecordPlayer = () => {
   const audio = '/Sunny.mp3'

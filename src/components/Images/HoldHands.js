@@ -1,13 +1,14 @@
+/**
+ * @file src/app/page.js
+ */
+
 import { useRef, useState, useEffect } from 'react'
 import gsap from 'gsap'
 import Image from 'next/image'
-import localFont from 'next/font/local'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
 
 import styles from './HoldHands.module.scss'
-
-const AlohaMagazineLight = localFont({ src: '../../../public/fonts/AlohaMagazine-Light.ttf' })
 
 gsap.registerPlugin(ScrollTrigger)
 

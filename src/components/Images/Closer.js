@@ -1,3 +1,7 @@
+/**
+ * @file src/app/page.js
+ */
+
 import { useRef, useState, useEffect } from 'react'
 import gsap from 'gsap'
 import Image from 'next/image'
