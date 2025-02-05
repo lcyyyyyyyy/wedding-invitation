@@ -13,6 +13,22 @@
 
 .wrapper {
   width: 100%;
+
+  h2 {
+    color: #738772;
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+    font-size: 4.6rem;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  @media (min-width: 640px) {
+    max-width: 500px;
+  }
+}
+
+.date {
+  width: 100%;
   border: 1px solid;
   padding: 60px 40px;
   display: flex;
@@ -21,7 +37,7 @@
   flex-direction: column;
   justify-content: center;
 
-  h2 {
+  h3 {
     position: relative;
     font-size: 3.6rem;
     text-align: center;
@@ -51,7 +67,7 @@
     }
   }
 
-  h3 {
+  h4 {
     width: fit-content;
     position: relative;
     font-size: 3rem;
@@ -85,13 +101,31 @@
     padding: 40px;
     max-width: 500px;
 
-    h2 {
+    h3 {
       font-size: 4rem;
     }
 
-    h3 {
+    h4 {
       font-size: 3.6rem;
     }
+  }
+}
+
+.image {
+  width: 100%;
+  height: calc(100vw * 0.8);
+  opacity: 0;
+  position: relative;
+  margin-bottom: 80px;
+
+  img {
+    object-fit: cover;
+  }
+
+  @media (min-width: 640px) {
+    height: 400px;
+    max-width: 500px;
+    margin-bottom: 100px;
   }
 }
 
